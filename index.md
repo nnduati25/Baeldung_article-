@@ -1,15 +1,3 @@
-# Creating a Deep vs Shallow Copy of an Object in Java
-In the field of Java Programming, Deep and Shallow copying are two main ways that objects are copied. In this article we are going to check the ways in which objects are duplicated using the two copying steps. Shallow and deep copying are both related to object copying. Buty what's an Object? objects are physical entities in programming that are used to represent real-world. An object copy also referred as clone, is usually created if you want to move or modify an object while still preserving tyhe state of the original object.
-
-### Prerequisite
-In order to understand the concept of `Shallow` and `Deep` copying is advicsble to have fondation on the following topics.
-* Basic Java Syntax and concept
-* Object oriented Programming (OOP)
-* Undersatnding reference and reference types
-* Cloneable Interface and `clone()` Method
-
-## Shallow Copying
-Shallow Copying is a process of copying an object where new object gets its own copy of the original object. Shallow copying stores the reference of object to the original object address. The object will have a similar copy of all the entities of source object inlcuding the primitive and object reference.
 
 ### Code Snippet for Shallow Copying 
 
@@ -79,8 +67,6 @@ Original Student: Programming
 Shallow Copy: Programmig
 ```
 
-## Deep Copy
-Deep copy of an object creates an exact copy of the same object. In deep copy both source and replica objects are independent. A change in source object will not affect the replica object. By invoking the `clone()` method or using other techniques, deep copying ensures that both primitive fields and object references are entirely replicated, preserving the complete state of the original object.
 
 ### Code Snippet for Shallow Copying 
 ``` java
@@ -149,20 +135,3 @@ Original Student: Programming
 Deep Copy: Java
 
 ```
-According to the output before mofication both student had  the `courseName` as "Programming" because the deep copy constructor creates a new `Course` object with the same `courseName`. 
-After mofification changing the `courseName` in `student2` to "Java" does not affect student1, because student1 and student2 have separate Course objects.
-
-## Differences between Shallow and Deep Copy
-* Definition:
-Shallow Copy: Produces a fresh object without making duplicates of nested objects. References to those nested objects are instead copied.
-Deep Copy: Constructs a new object and duplicates every object—including nested objects—found inside the old object recursively.
-* Managing References:
-Shallow Copy: The original nested objects are still referenced by the nested objects.
-Deep Copy: All nested items are completely replicated without making any reference to the source objects.
-* Memory Utilization:
-Shallow Copy: Since nested objects are not duplicated, it usually consumes less memory.
-Deep Copy: Since every item is duplicated, it requires more memory.
-* Achievement:
-Shallow Copy: Since it simply needs to copy references, it is typically quicker.
-Deep Copy: Takes longer because all nested items and their child objects must be copied.
-
